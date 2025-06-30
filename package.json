@@ -11,7 +11,7 @@
     "build-only": "vite build",
     "postbuild": "cp dist/index.html dist/404.html",
     "type-check": "vue-tsc --build",
-    "deploy": "run-s build-only && gh-pages -d dist"
+    "deploy": "run-s build-only postbuild && gh-pages -d dist"
   },
   "dependencies": {
     "vite": "^5.4.19",
