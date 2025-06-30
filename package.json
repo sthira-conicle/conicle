@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "preview:dev": "vite preview --mode development",
     "build-only": "vite build",
+    "postbuild": "cp dist/index.html dist/404.html",
     "type-check": "vue-tsc --build",
     "deploy": "run-s build-only && gh-pages -d dist"
   },
