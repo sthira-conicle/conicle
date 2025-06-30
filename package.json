@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
+    "preview:dev": "vite preview --mode development",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "deploy": "run-s build-only && gh-pages -d dist"
