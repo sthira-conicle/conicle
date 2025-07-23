@@ -4,7 +4,7 @@
 <template>
   <div class="home-body">
     <div class="button-container">
-      <button>Click me</button>
+      <button id="click_me">Click me</button>
     </div>
     <form>
       <h2>Learner</h2>
