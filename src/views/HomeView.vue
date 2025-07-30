@@ -58,7 +58,7 @@ function trigger_apply_tracking_filter() {
         "filter_learning_condition.adding_method": [
           1
         ],
-        "filter_learning_condition.learning_status": [
+        "filter_learning_condition.status": [
           4,
           2
         ]
