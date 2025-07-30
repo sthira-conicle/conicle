@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
-function trigger_apply_tracking_filter() {
+window.dataLayer = window.dataLayer || [];
 
-      window.dataLayer = window.dataLayer || [];
+function trigger_apply_tracking_filter() {
       window.dataLayer.push({
         event: "apply_tracking_filter",
         "filter_learner.count_filter": 5,
@@ -73,7 +73,7 @@ function trigger_apply_tracking_filter() {
     <div class="button-container">
       <button tag="click_me_test">Click me</button>
     </div>
-    <form id="filter">
+    <form id="tracking_filter" @submit.prevent="trigger_apply_tracking_filter">
       <h2>Learner</h2>
       <label for="department">Department</label><br>
       <input type="text" id="department" name="department" value="product"><br>
@@ -89,7 +89,7 @@ function trigger_apply_tracking_filter() {
       <input type="radio" id="finished" name="learning_period" value="finished">
       <label for="finished">Finished during</label>
       <br><br><hr><br>
-      <input type="submit" value="Apply" onclick="trigger_apply_tracking_filter">
+      <input type="submit" value="Apply">
     </form>
   </div>
 </template>
