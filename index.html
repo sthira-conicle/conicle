@@ -4,9 +4,9 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
-        user_acc_id: "123456",
+        user_acc_id: String(Math.round(Math.random())*10),
         user_role: "admin",
-        tenant_id: "conicle"
+        tenant_id: "conicle"+String(Math.round(Math.random())*10)
       });
     </script>
     <!-- Google Tag Manager -->
