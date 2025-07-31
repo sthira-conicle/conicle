@@ -5,7 +5,7 @@
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         user_acc_id: String(Math.round(Math.random()*10)),
-        user_role: "admin",
+        user_role: Math.round(Math.random()) ? "admin" : "manager",
         tenant_id: "conicle"+String(Math.round(Math.random()*10))
       });
     </script>
