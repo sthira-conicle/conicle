@@ -69,7 +69,7 @@ push_batch_event({
     <div class="button-container">
       <button tag="click_me_test">Click me</button>
     </div>
-    <form id="tracking_filter" @submit.prevent="trigger_events">
+    <form id="tracking_filter" @submit="trigger_events">
       <h2>Learner</h2>
       <label for="department">Department</label><br>
       <input type="text" id="department" name="department" value="product"><br>
