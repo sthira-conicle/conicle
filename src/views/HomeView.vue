@@ -10,7 +10,7 @@ function push_batch_event(data, category, prefix) {
   for (const key in data) {
     window.dataLayer.push({
       event: prefix ? `${prefix}${key}` : `${key}`,
-      [key]: data[key],
+      event_value: data[key],
       ...(category ? { event_category: category } : {})
     });
   }
