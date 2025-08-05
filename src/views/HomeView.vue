@@ -9,7 +9,8 @@ window.dataLayer = window.dataLayer || [];
 function push_batch_event(data, category, prefix) {
   for (const key in data) {
     window.dataLayer.push({
-      event: prefix ? `${prefix}${key}` : `${key}`,
+      //event: prefix ? `${prefix}${key}` : `${key}`,
+      event: key,
       event_value: data[key],
       ...(category ? { event_category: category } : {})
     });
@@ -40,11 +41,11 @@ push_batch_event({
   "learning_period_period_date": generateRandomString(Math.round(Math.random()*7)+3),
   "learning_condition_count_filter": Math.round(Math.random()*1)+1,
   "learning_condition_adding_method": generateRandomString(Math.round(Math.random()*7)+3),
-  "learning_condition_status": generateRandomString(Math.round(Math.random()*7)+3)
+  "learning_condition_learning_status": generateRandomString(Math.round(Math.random()*7)+3)
 },'tracking_filter','apply_filter_');
 
 push_batch_event({
-  "hide_leraner_not_active": Math.round(Math.random()) ? true : false,
+  "hide_learner_not_active": Math.round(Math.random()) ? true : false,
   "include_sub_content": Math.round(Math.random()) ? true : false
 },'tracking_option','apply_option_');
 
