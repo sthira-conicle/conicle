@@ -11,13 +11,13 @@ function push_batch_event(data, category, prefix) {
     window.dataLayer.push({
       //event: prefix ? `${prefix}${key}` : `${key}`,
       event: key,
-      event_value: data[key],
+      event_value: data,
       ...(category ? { event_category: category } : {})
     });
   }
 }
 
-function trigger_events() {
+function trigger_form_submit() {
 
 push_batch_event({
   "learner_count_filter": Math.round(Math.random()*4)+1,
@@ -44,10 +44,18 @@ push_batch_event({
   "learning_condition_learning_status": generateRandomString(Math.round(Math.random()*7)+3)
 },'tracking_filter','apply_filter_');
 
+}
+
+function trigger_options() {
+
 push_batch_event({
   "hide_learner_not_active": Math.round(Math.random()) ? true : false,
   "include_sub_content": Math.round(Math.random()) ? true : false
 },'tracking_option','apply_option_');
+
+}
+
+function trigger_view_as() {
 
 push_batch_event({
   "admin": Math.round(Math.random()) ? true : false,
@@ -55,6 +63,10 @@ push_batch_event({
   "one_level": Math.round(Math.random()) ? true : false,
   "full_line": Math.round(Math.random()) ? true : false
 },'tracking_view_as','apply_view_as_');
+
+}
+
+function trigger_customize() {
 
 push_batch_event({
   "learning_status": Math.round(Math.random()) ? true : false,
@@ -70,7 +82,7 @@ push_batch_event({
     <div class="button-container">
       <button tag="click_me_test">Click me</button>
     </div>
-    <form id="tracking_filter" @submit="trigger_events">
+    <form id="tracking_filter" @submit="trigger_form_submit">
       <h2>Learner</h2>
       <label for="department">Department</label><br>
       <input type="text" id="department" name="department" value="product"><br>
@@ -88,6 +100,9 @@ push_batch_event({
       <br><br><hr><br>
       <input type="submit" value="Apply">
     </form>
+    <button tag="view_as" @click="trigger_view_as">View as</button>
+    <button tag="options" @click="trigger_options">Options</button>
+    <button tag="customize" @click="trigger_customize">Customize</button>
   </div>
 </template>
 
