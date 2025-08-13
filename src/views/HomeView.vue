@@ -16,6 +16,13 @@ function push_batch_event(data, category, prefix) {
     });
   }
 }
+function trigger_click(event) {
+  const tag = event.currentTarget.getAttribute('data-id');
+window.dataLayer.push({
+  event: tag,
+  event_value: tag ? tag : null
+});
+}
 
 function trigger_form_submit() {
 
@@ -80,7 +87,8 @@ push_batch_event({
 <template>
   <div class="home-body">
     <div class="button-container">
-      <button tag="click_me_test">Click me</button>
+      <button tag="click_me_1" @click="trigger_click($event)">Click me 1</button>
+      <button tag="click_me_2" @click="trigger_click($event)">Click me 2</button>
     </div>
     <form id="tracking_filter" @submit="trigger_form_submit">
       <h2>Learner</h2>
